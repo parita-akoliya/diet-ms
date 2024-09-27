@@ -1,0 +1,6 @@
+apps:
+  -
+    name: diet-buddy-ms
+    restart_delay: 100
+    script: server.js
+    autorestart: true

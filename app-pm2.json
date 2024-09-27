@@ -1,0 +1,9 @@
+{
+	"apps":[
+		{
+			"name":"diet-buddy-app",
+			"script":"npm",
+			"args":"start"
+		}
+		]
+}

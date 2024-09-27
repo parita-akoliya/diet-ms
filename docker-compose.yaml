@@ -1,0 +1,24 @@
+version : '3.3'
+
+services:
+  angular: # name of the first service
+    build: diet-mate-webapp # specify the directory of the Dockerfile
+    ports:
+      - "4200:4200" # specify port forewarding
+
+  mongo-database:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+
+  diet-buddy-server:
+    restart: always
+    build: .
+    depends_on:
+      - 'mongo-database'
+    ports:
+      - "9000:9000"
+    links:
+      - mongo-database   
